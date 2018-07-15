@@ -3,11 +3,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>往后余生</title>
     <style>
         body{
 
-            background-image: url("2.jpeg");
+            background-image: url("1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
@@ -16,12 +16,13 @@
 
         }
         p{
-
-
+            width: 375px;
+            height: 600px;
+            margin: 150px;
+            line-height: 100px;
             font-size: 60px;
-            color: grey;
+            color: #ffffff;
             font-weight: bold;
-            margin-top: 165%;
             text-align: center;
 
 
@@ -30,16 +31,36 @@
     </style>
 </head>
 <body>
-<p>   走过那条熟悉的街  <br>
-        仿佛你就站在我面前  <br>
-        温暖笑脸浮现在眼前 <br>
-        泪水模糊了我双眼  <br>
-        我知道你已不在我身边 <br>
-        亲爱的你现在还好吗         </p>
+<p>   往后余生  <br>
+    风雪是你  <br>
+    平淡是你 <br>
+    清贫也是你  <br>
+    荣华是你 <br>
+    心底温柔是你         </p>
 
 
-<audio src="123.mp3" autoplay loop></audio>
-
+<audio src="1.mp3" autoplay loop></audio>
+<script>
+    //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+    //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+    document.addEventListener('touchstart', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        }
+        audioAutoPlay();
+    });
+</script>
 </body>
 
 </html>
